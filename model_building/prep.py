@@ -20,7 +20,7 @@ print("Dataset loaded successfully.")
 df.drop(columns=['CustomerID'], inplace=True)
 
 # Dropping Unneccessary columns
-df.drop(columns=['0'], inplace=True)
+# df.drop(columns=['0'], inplace=True)
 df.drop(columns=['DurationOfPitch'], inplace=True)
 df.drop(columns=['NumberOfFollowups'], inplace=True)
 df.drop(columns=['ProductPitched'], inplace=True)
@@ -31,8 +31,7 @@ df.Gender=df.Gender.replace('Fe Male', 'Female')
 
 #Making a list of all catrgorical variables 
 cat_col=['TypeofContact', 'CityTier','Occupation', 'Gender', 'NumberOfPersonVisiting',
-       'NumberOfFollowups', 'ProductPitched', 'PreferredPropertyStar',
-       'MaritalStatus', 'Passport', 'PitchSatisfactionScore',
+       'PreferredPropertyStar','MaritalStatus', 'Passport',
        'OwnCar', 'NumberOfChildrenVisiting', 'Designation']
 
 #Converting the data type of each categorical variable to 'category'
