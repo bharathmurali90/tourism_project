@@ -5,6 +5,8 @@ import os
 
 repo_id="BharathonAI/tourism-newplan-adoption-prediction"        # the target repo
 repo_type="space"
+space_sdk="docker",  # Because we're using a Docker backend
+private=False  # Make it private if needed
 
 # api = HfApi(token=os.getenv("HF_TOKEN"))
 # api.upload_folder(
@@ -16,11 +18,11 @@ repo_type="space"
 
 try:
     api = HfApi(token=os.getenv("HF_TOKEN"))
-    api.repo_info(repo_id=repo_id, repo_type=repo_type)
+    api.repo_info(repo_id=repo_id, repo_type=repo_type,space_sdk=space_sdk,private =private)
     print(f"Space '{repo_id}' already exists. Using it.")
 except RepositoryNotFoundError:
     print(f"Space '{repo_id}' not found. Creating new space...")
-    create_repo(repo_id=repo_id, repo_type=repo_type, private=False)
+    create_repo(repo_id=repo_id, repo_type=repo_type, space_sdk=space_sdk,private =private)
     print(f"Space '{repo_id}' created.")
 
 api.upload_folder(
