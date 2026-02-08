@@ -5,7 +5,7 @@ import os
 
 repo_id="BharathonAI/tourism-newplan-adoption-prediction"        # the target repo
 repo_type="space"
-space_sdk="docker",  # Because we're using a Docker backend
+space_sdk="docker"  # Because we're using a Docker backend
 private=False  # Make it private if needed
 
 # api = HfApi(token=os.getenv("HF_TOKEN"))
